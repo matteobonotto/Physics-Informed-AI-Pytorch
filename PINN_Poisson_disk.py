@@ -208,7 +208,7 @@ class trainer(nn.Module):
                 loss = nn.MSELoss()(pred, y)
 
                 # Backpropagation
-                optimizer.zero_grad()
+                optimizer.zero_grad()ß
                 loss.backward()
                 optimizer.step()
 
