@@ -6,3 +6,7 @@ ipykernel
 pyyaml
 seaborn
 pde
+torchinfo
+torchview
+pydot
+graphviz
