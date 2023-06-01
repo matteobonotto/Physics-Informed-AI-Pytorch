@@ -1,5 +1,7 @@
 import torch
 from torch import nn
+from torchview import draw_graph
+import torchinfo 
 
 class base_MLP(nn.Module):
     ''' Definition of a baseline MLP model '''
@@ -20,7 +22,7 @@ class base_MLP(nn.Module):
 
     def forward(self,x):
         x = self.layer_in(x)
-        for i,layer in self.layers_hid:
+        for layer in self.layers_hid:
             x = layer(x)
         return self.layer_out(x)
 
@@ -33,11 +35,8 @@ class base_MLP(nn.Module):
     # -----------------------------------------------
     def visual_graph(self):
         model_graph = draw_graph(self, 
-                                 input_size=(1,n_features,l_window), 
+                                 input_size=self.input_size, 
                                  expand_nested=True, 
                                  device=self.device)
         return model_graph.visual_graph
     
-
-
-
