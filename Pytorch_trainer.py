@@ -3,7 +3,7 @@ from torch import nn
 import base_MLP as MLP
 
 
-class HDL_Eni(nn.Module):
+class HDL_Eni(nn.Module,model):
     def _init_(self,layer_list,device=None):
         super()._init_()
         # instantiate layers
